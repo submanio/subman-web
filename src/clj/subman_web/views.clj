@@ -71,9 +71,9 @@
                                           debug-js
                                           production-js))
             (when is-debug
-              [:script "goog.require('subman.core');"])]
+              [:script "goog.require('subman_web.core');"])]
            [:body [:div#main]
-            [:script "subman.core.run();"]
+            [:script "subman_web.core.run();"]
             [:script (get-ga-code ga-id)]])))
 
 (defn sitemap-page [n]
