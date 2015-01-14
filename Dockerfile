@@ -2,8 +2,6 @@ FROM ubuntu:14.04
 MAINTAINER Vladimir Iakovlev <nvbn.rm@gmail.com>
 
 RUN adduser --disabled-password --gecos "" subman
-RUN adduser subman sudo
-RUN echo "subman ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 ENV "VERSION" 2015_01_12_02_16
 
@@ -20,17 +18,13 @@ RUN chmod 0755 /usr/local/bin/lein
 
 WORKDIR /home/subman
 COPY . /home/subman/code
-RUN chown -R subman codegit
+RUN chown -R subman code
 USER subman
 WORKDIR /home/subman/code
 
-RUN lein deps
-RUN lein cljx once
 RUN lein bower install
-RUN lein with-profile production cljsbuild once >> /dev/null 2>> /dev/null
+RUN sass resources/public/main.sass > resources/public/main.css
 
-WORKDIR resources/public/
-RUN sass main.sass > main.css
-WORKDIR ../..
+RUN lein ring uberjar >> /dev/null 2>> /dev/null
 
-VOLUME /var/static
+CMD java -jar target/subman-web-*-SNAPSHOT-standalone.jar
