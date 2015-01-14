@@ -54,19 +54,18 @@ Prepare assets:
 ```bash
 lein cljsbuild once dev
 lein cljx
-lein garden once
 ```
 
 And run with:
 
 ```bash
-lein run
+lein ring server
 ```
 
 For building jar run:
 
 ```bash
-lein with-profile production ring uberjar
+lein ring uberjar
 ```
 
 For running server side tests run:
@@ -83,32 +82,8 @@ lein cljsbuild test
 
 ## Deploy
 
-For running:
-
-```bash
-fig up
-```
-
 For testing local changes you need to build docker image:
 
 ```bash
-docker build -t submanio/subman .
-```
-
-## Major migrations
-
-### 2015-01-10 Presentation db support
-
-In separate shells run:
-
-```bash
-fig up elasticsearch mongodb
-fig run web lein repl
-```
-
-And execute in REPL:
-
-```clojure
-(require '[subman.migrations :refer [from-index-to-raw-db!]])
-(from-index-to-raw-db!)
+docker build -t submanio/subman-web .
 ```

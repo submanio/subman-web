@@ -7,14 +7,10 @@
                            [org.clojure/clojurescript "0.0-2665"]
                            [compojure "1.3.1"]
                            [hiccup "1.0.5"]
-                           [enlive "1.1.5"]
                            [clojurewerkz/elastisch "2.1.0"]
                            [cljs-http "0.1.24"]
-                           [clj-http "1.0.1"]
                            [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                           [overtone/at-at "1.2.0"]
                            [ring "1.3.2"]
-                           [swiss-arrows "1.0.0"]
                            [jayq "2.5.2"]
                            [om "0.7.3"]
                            [environ "1.0.0"]
@@ -28,14 +24,12 @@
                            [ring-transit "0.1.3"]
                            [org.clojure/tools.logging "0.3.1"]
                            [com.cemerick/url "0.1.1"]
-                           [itsy "0.1.1"]
                            [clj-di "0.5.0"]
-                           [com.novemberain/monger "2.0.1"]
                            [com.cemerick/piggieback "0.1.4"]]
-            :plugins [[lein-cljsbuild "1.0.3"]
+            :plugins [[lein-cljsbuild "1.0.4"]
                       [com.keminglabs/cljx "0.5.0" :exclusions [org.clojure/clojure]]
                       [lein-environ "1.0.0"]
-                      [lein-ring "0.8.11"]
+                      [lein-ring "0.9.1"]
                       [lein-ancient "0.5.5"]
                       [com.cemerick/clojurescript.test "0.3.3"]
                       [lein-bower "0.5.1"]]
@@ -62,25 +56,19 @@
                                    :ga-id ""
                                    :site-url "http://localhost:3000/"
                                    :db-host "http://127.0.0.1:9200"
-                                   :index-name "subman7"
-                                   :raw-db-host "localhost"
-                                   :raw-db-port "27017"
-                                   :raw-db-name "subman7"}
+                                   :index-name "subman7"}
                              :jvm-opts ["-Xss16m"]}
-                       :production {:cljsbuild {:builds [{:source-paths ["src/cljs" "target/generated-cljs"]
-                                                          :compiler {:externs ["resources/public/components/jquery/dist/jquery.min.js"
-                                                                               "resources/public/components/bootstrap-sass-official/assets/javascripts/bootstrap.js"
-                                                                               "resources/public/components/typeahead.js/dist/typeahead.jquery.min.js"
-                                                                               "resources/public/components/react/react.min.js"]
-                                                                     :output-to "resources/public/main.js"
-                                                                     :optimizations :advanced
-                                                                     :pretty-print false}}]}}
-                       :uberjar {:aot :all
-                                 :env {:is-debug false
-                                       :ga-id "UA-54135564-1"
-                                       :site-url "http://subman.io/"
-                                       :db-host "http://127.0.0.1:9200"
-                                       :index-name "subman7"}}}
+                       :uberjar {:cljsbuild {:builds [{:source-paths ["src/cljs" "target/generated-cljs"]
+                                                       :compiler {:externs ["resources/public/components/jquery/dist/jquery.min.js"
+                                                                            "resources/public/components/bootstrap-sass-official/assets/javascripts/bootstrap.js"
+                                                                            "resources/public/components/typeahead.js/dist/typeahead.jquery.min.js"
+                                                                            "resources/public/components/react/react.min.js"]
+                                                                  :output-to "resources/public/main.js"
+                                                                  :optimizations :advanced
+                                                                  :pretty-print false}}]}
+                                 :aot :all
+                                 :prep-tasks [["cljx" "once"]
+                                              ["cljsbuild" "once"]]}}
             :source-paths ["src/clj", "target/generated-clj"]
             :test-paths ["test/clj"]
             :cljx {:builds [{:source-paths ["src/cljx"]
