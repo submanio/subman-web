@@ -18,6 +18,3 @@ hs_err*
 /resources/public/main.css
 .idea
 *iml
-deploy/data/*
-deploy/logs/*
-deploy/config/*

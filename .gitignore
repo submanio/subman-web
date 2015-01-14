@@ -18,7 +18,3 @@ hs_err*
 /resources/public/main.css
 .idea
 *iml
-deploy/data/elasticsearch/*
-deploy/data/mongodb/*
-deploy/logs/elasticsearch/*
-deploy/logs/nginx/*
