@@ -1,12 +1,12 @@
-(ns subman.models-test
+(ns subman-web.models-test
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cemerick.cljs.test :refer-macros [deftest testing is done]]
             [test-sugar.core :refer [is=]]
             [cljs.core.async :refer [<!]]
             [cljs-http.client :as http]
             [clj-di.core :refer [register!]]
-            [subman.const :as const]
-            [subman.models :as m]))
+            [subman-web.const :as const]
+            [subman-web.models :as m]))
 
 (deftest test-create-search-url
   (register! :sources const/type-names)

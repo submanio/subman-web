@@ -1,13 +1,13 @@
-(ns subman.components.search-input
+(ns subman-web.components.search-input
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs.core.async :refer [timeout <!]]
             [om.core :as om :include-macros true]
             [sablono.core :refer-macros [html]]
             [om-tools.core :refer-macros [defcomponent]]
             [jayq.core :refer [$]]
-            [subman.const :as const]
-            [subman.autocomplete :refer [get-completion]]
-            [subman.helpers :refer [value]]))
+            [subman-web.const :as const]
+            [subman-web.autocomplete :refer [get-completion]]
+            [subman-web.helpers :refer [value]]))
 
 (defn completion-source
   "Source for typeahead autocompletion"

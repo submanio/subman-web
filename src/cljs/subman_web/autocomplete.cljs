@@ -1,4 +1,4 @@
-(ns subman.autocomplete
+(ns subman-web.autocomplete
   (:require [clojure.string :as string]))
 
 (defn only-contains

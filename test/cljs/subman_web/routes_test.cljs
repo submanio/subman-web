@@ -1,10 +1,10 @@
-(ns subman.routes-test
+(ns subman-web.routes-test
   (:require [cemerick.cljs.test :refer-macros [deftest testing]]
             [test-sugar.core :refer [is=]]
             [clj-di.core :refer [register! get-dep]]
             [secretary.core :as s]
-            [subman.helpers :refer [DummyHistory]]
-            [subman.routes :as r]))
+            [subman-web.helpers :refer [DummyHistory]]
+            [subman-web.routes :as r]))
 
 (deftest test-set-search-query
   (let [state (atom {})]

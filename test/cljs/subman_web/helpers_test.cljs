@@ -1,9 +1,9 @@
-(ns subman.helpers-test
+(ns subman-web.helpers-test
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cemerick.cljs.test :refer-macros [deftest testing done is]]
             [test-sugar.core :refer [is=]]
             [cljs.core.async :refer [<!]]
-            [subman.helpers :as helpers]))
+            [subman-web.helpers :as helpers]))
 
 (deftest test-is-filled?
   (testing "not when nil"

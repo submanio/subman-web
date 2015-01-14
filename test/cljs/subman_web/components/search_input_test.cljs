@@ -1,11 +1,11 @@
-(ns subman.components.search-input-test
+(ns subman-web.components.search-input-test
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cemerick.cljs.test :refer-macros [deftest done testing is]]
             [cljs.core.async :refer [timeout <!]]
             [om.core :as om :include-macros true]
             [jayq.core :refer [$]]
-            [subman.helpers :as h]
-            [subman.components.search-input :refer [search-input]]))
+            [subman-web.helpers :as h]
+            [subman-web.components.search-input :refer [search-input]]))
 
 (deftest ^:async test-search-input
   (let [state (atom {:search-query "initial"})]

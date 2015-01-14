@@ -1,13 +1,14 @@
-(ns subman.components.result-entry-test
-  (:require-macros [cljs.core.async.macros :refer [go]])
+(ns subman-web.components.result-entry-test
+  (:require-macros [cljs.core.async.macros :refer [go]]
+                   [clj-di.test :refer [with-registered]])
   (:require [cemerick.cljs.test :refer-macros [deftest done testing is]]
             [test-sugar.core :refer [is=]]
             [cljs.core.async :refer [<!]]
             [om.core :as om :include-macros true]
             [jayq.core :refer [$]]
-            [subman.const :as const]
-            [subman.helpers :refer [render-node]]
-            [subman.components.result-entry :as c]))
+            [subman-web.const :as const]
+            [subman-web.helpers :refer [render-node]]
+            [subman-web.components.result-entry :as c]))
 
 (deftest test-get-result-entry-title
   (testing "without name"
@@ -24,8 +25,9 @@
                                                  :episode "12"}))))
 
 (deftest test-get-result-source
-  (is= (str "Source: " (const/type-names const/type-addicted))
-       (c/get-result-source {:source const/type-addicted})))
+  (with-registered [:sources const/type-names]
+    (is= (str "Source: " (const/type-names const/type-addicted))
+         (c/get-result-source {:source const/type-addicted}))))
 
 (deftest test-get-result-lang
   (is= "Language: English" (c/get-result-lang {:lang "English"})))

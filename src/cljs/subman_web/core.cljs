@@ -1,12 +1,12 @@
-(ns subman.core
+(ns subman-web.core
   (:require [alandipert.storage-atom :refer [local-storage]]
             [cljs-http.client :as http]
             [clj-di.core :refer [register! get-dep]]
             [goog.history.Html5History :as history5]
-            [subman.const :as const]
-            [subman.components.core :refer [init-components]]
-            [subman.routes :refer [init-routes]]
-            [subman.handlers :as h]))
+            [subman-web.const :as const]
+            [subman-web.components.core :refer [init-components]]
+            [subman-web.routes :refer [init-routes]]
+            [subman-web.handlers :as h]))
 
 (defn ^:export run
   []

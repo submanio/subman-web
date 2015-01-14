@@ -1,12 +1,12 @@
-(ns subman.components.core
+(ns subman-web.components.core
   (:require [om.core :as om :include-macros true]
             [sablono.core :refer-macros [html]]
             [om-tools.core :refer-macros [defcomponent]]
             [jayq.core :refer [$]]
-            [subman.helpers :refer [is-filled?]]
-            [subman.components.search-input :refer [search-input]]
-            [subman.components.search-result :refer [search-result]]
-            [subman.components.welcome :refer [welcome]]))
+            [subman-web.helpers :refer [is-filled?]]
+            [subman-web.components.search-input :refer [search-input]]
+            [subman-web.components.search-result :refer [search-result]]
+            [subman-web.components.welcome :refer [welcome]]))
 
 (defcomponent page [app _]
   (display-name [_] "Page")

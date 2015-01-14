@@ -1,11 +1,11 @@
-(ns subman.components.welcome-test
+(ns subman-web.components.welcome-test
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cemerick.cljs.test :refer-macros [deftest done testing is]]
             [cljs.core.async :refer [<!]]
             [om.core :as om :include-macros true]
             [jayq.core :refer [$]]
-            [subman.helpers :refer [render-node]]
-            [subman.components.welcome :refer [welcome]]))
+            [subman-web.helpers :refer [render-node]]
+            [subman-web.components.welcome :refer [welcome]]))
 
 (deftest ^:async test-welcome
   (go (let [state (atom {:options {:language {:value "english"

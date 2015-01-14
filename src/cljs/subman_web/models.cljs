@@ -1,11 +1,11 @@
-(ns subman.models
+(ns subman-web.models
   (:require-macros [cljs.core.async.macros :refer [go]]
                    [clj-di.core :refer [let-deps]])
   (:require [clojure.string :as string]
             [cognitect.transit :as tr]
             [clj-di.core :refer [get-dep]]
             [cljs.core.async :refer [<!]]
-            [subman.const :as const]))
+            [subman-web.const :as const]))
 
 (defn ?-query-part
   [part-name part-formatter [api-query query]]

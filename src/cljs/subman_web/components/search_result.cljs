@@ -1,8 +1,8 @@
-(ns subman.components.search-result
+(ns subman-web.components.search-result
   (:require [om.core :as om :include-macros true]
             [sablono.core :refer-macros [html]]
             [om-tools.core :refer-macros [defcomponent]]
-            [subman.components.result-entry :refer [result-entry]]))
+            [subman-web.components.result-entry :refer [result-entry]]))
 
 (defn search-resul-list
   "Render search result when something found"

@@ -1,13 +1,13 @@
-(ns subman.handlers-test
+(ns subman-web.handlers-test
   (:require-macros [cljs.core.async.macros :refer [go]]
                    [clj-di.core :refer [let-deps]])
   (:require [cemerick.cljs.test :refer-macros [deftest done testing is]]
             [cljs.core.async :refer [<! timeout]]
             [clj-di.core :refer [register!]]
-            [subman.helpers :refer [DummyHistory]]
-            [subman.const :as const]
-            [subman.models :as m]
-            [subman.handlers :as h]))
+            [subman-web.helpers :refer [DummyHistory]]
+            [subman-web.const :as const]
+            [subman-web.models :as m]
+            [subman-web.handlers :as h]))
 
 (deftest ^:async test-handle-search-query!
   (let [state (atom {:search-query "initial"

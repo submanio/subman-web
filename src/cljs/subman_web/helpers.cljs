@@ -1,4 +1,4 @@
-(ns subman.helpers
+(ns subman-web.helpers
   (:require-macros [cljs.core.async.macros :refer [go go-loop]])
   (:require [cljs.core.async :refer [<! >! chan]]
             [om.core :as om :include-macros true]

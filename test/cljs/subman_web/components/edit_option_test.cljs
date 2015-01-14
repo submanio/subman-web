@@ -1,13 +1,13 @@
-(ns subman.components.edit-option-test
+(ns subman-web.components.edit-option-test
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cemerick.cljs.test :refer-macros [deftest done testing is]]
             [test-sugar.core :refer [is=]]
             [cljs.core.async :refer [<! timeout]]
             [om.core :as om :include-macros true]
             [jayq.core :refer [$]]
-            [subman.const :as const]
-            [subman.helpers :as h]
-            [subman.components.edit-option :refer [edit-option]]))
+            [subman-web.const :as const]
+            [subman-web.helpers :as h]
+            [subman-web.components.edit-option :refer [edit-option]]))
 
 (defn get-options
   "Get options texts from html"

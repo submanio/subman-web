@@ -1,11 +1,11 @@
-(ns subman.components.core-test
+(ns subman-web.components.core-test
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cemerick.cljs.test :refer-macros [deftest done testing is]]
             [cljs.core.async :refer [<! timeout]]
             [om.core :as om :include-macros true]
             [jayq.core :refer [$]]
-            [subman.helpers :refer [render-node]]
-            [subman.components.core :refer [page]]))
+            [subman-web.helpers :refer [render-node]]
+            [subman-web.components.core :refer [page]]))
 
 (deftest ^:async test-page
   (go (let [state (atom {:stable-search-query ""})

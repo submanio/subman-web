@@ -1,8 +1,8 @@
-(ns subman.components.edit-option
+(ns subman-web.components.edit-option
   (:require [om.core :as om :include-macros true]
             [sablono.core :refer-macros [html]]
             [om-tools.core :refer-macros [defcomponent]]
-            [subman.helpers :refer [value]]))
+            [subman-web.helpers :refer [value]]))
 
 (defcomponent edit-option [option _]
   (display-name [_] "Edit Option")

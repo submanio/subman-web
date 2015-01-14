@@ -1,10 +1,10 @@
-(ns subman.handlers
+(ns subman-web.handlers
   (:require-macros [cljs.core.async.macros :refer [go-loop go]])
   (:require [cljs.core.async :refer [<! alts! timeout]]
-            [subman.helpers :refer [subscribe-to-state is-filled?]]
-            [subman.const :as const]
-            [subman.routes :as r]
-            [subman.models :as m]))
+            [subman-web.helpers :refer [subscribe-to-state is-filled?]]
+            [subman-web.const :as const]
+            [subman-web.routes :as r]
+            [subman-web.models :as m]))
 
 (defn handle-search-query!
   "Makes stable search query from search query"

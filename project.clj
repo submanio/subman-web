@@ -1,6 +1,6 @@
-(defproject subman "0.1.0-SNAPSHOT"
+(defproject subman-web "0.1.0-SNAPSHOT"
             :description "service for fast searching subtitles"
-            :url "https://github.com/nvbn/subman"
+            :url "https://github.com/submanio/subman-web"
             :license {:name "Eclipse Public License"
                       :url "http://www.eclipse.org/legal/epl-v10.html"}
             :dependencies [[org.clojure/clojure "1.6.0"]
@@ -83,15 +83,14 @@
                                        :index-name "subman7"}}}
             :source-paths ["src/clj", "target/generated-clj"]
             :test-paths ["test/clj"]
-            :main subman.core
             :cljx {:builds [{:source-paths ["src/cljx"]
                              :output-path "target/generated-clj"
                              :rules :clj}
                             {:source-paths ["src/cljx"]
                              :output-path "target/generated-cljs"
                              :rules :cljs}]}
-            :ring {:handler subman.handlers/app
-                   :init subman.handlers/init}
+            :ring {:handler subman-web.handlers/app
+                   :init subman-web.handlers/init}
             :bower {:directory "resources/public/components"}
             :bower-dependencies [["bootstrap-sass-official" "3.3.1"]
                                  ["font-awesome" "4.2.0"]

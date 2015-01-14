@@ -1,7 +1,7 @@
-(ns subman.autocomplete-test
+(ns subman-web.autocomplete-test
   (:require [cemerick.cljs.test :refer-macros [deftest testing]]
             [test-sugar.core :refer [is=]]
-            [subman.autocomplete :as autocomplete]))
+            [subman-web.autocomplete :as autocomplete]))
 
 (deftest test-only-contains
   (is= (autocomplete/only-contains ["cat" "Cats" "dog"]

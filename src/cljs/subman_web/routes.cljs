@@ -1,4 +1,4 @@
-(ns subman.routes
+(ns subman-web.routes
   (:require [secretary.core :as secretary :refer-macros [defroute]]
             [goog.events :as gevents]
             [goog.history.EventType :as history-event]

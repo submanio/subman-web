@@ -1,8 +1,8 @@
-(ns subman.components.result-entry
+(ns subman-web.components.result-entry
   (:require [sablono.core :refer-macros [html]]
             [om-tools.core :refer-macros [defcomponent]]
             [clj-di.core :refer-macros [let-deps]]
-            [subman.helpers :refer [is-filled? format-season-episode]]))
+            [subman-web.helpers :refer [is-filled? format-season-episode]]))
 
 (defn get-result-entry-title
   "Get formatted title for result entry"

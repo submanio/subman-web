@@ -20,7 +20,7 @@ RUN chmod 0755 /usr/local/bin/lein
 
 WORKDIR /home/subman
 COPY . /home/subman/code
-RUN chown -R subman code
+RUN chown -R subman codegit
 USER subman
 WORKDIR /home/subman/code
 

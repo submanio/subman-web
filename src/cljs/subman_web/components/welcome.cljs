@@ -1,8 +1,8 @@
-(ns subman.components.welcome
+(ns subman-web.components.welcome
   (:require [om.core :as om :include-macros true]
             [sablono.core :refer-macros [html]]
             [om-tools.core :refer-macros [defcomponent]]
-            [subman.components.edit-option :refer [edit-option]]))
+            [subman-web.components.edit-option :refer [edit-option]]))
 
 (defcomponent welcome [{:keys [total-count options]} _]
   (display-name [_] "Welcome")
