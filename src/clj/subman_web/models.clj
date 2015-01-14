@@ -1,13 +1,17 @@
-(ns subman.models
+(ns subman-web.models
   (:require [clojure.set :refer [union]]
             [clojurewerkz.elastisch.rest.document :as esd]
             [clojurewerkz.elastisch.query :as q]
-            [monger.collection :as mc]
+            [clojurewerkz.elastisch.rest :as esr]
             [environ.core :refer [env]]
             [clj-di.core :refer [register! get-dep]]
-            [subman.helpers :as helpers :refer [defsafe]]
-            [subman.const :as const]
-            [subman.db :refer [get-raw-db]]))
+            [subman-web.helpers :as helpers]
+            [subman-web.const :as const]))
+
+(defn connect!
+  "Connect to databases"
+  []
+  (register! :db-connection (esr/connect (env :db-host))))
 
 (defn get-total-count
   "Update total count of subtitles"
@@ -16,19 +20,6 @@
                   (env :index-name) "subtitle")
       :hits
       :total))
-
-(defn prepare-to-index
-  "Prepare document to putting in index."
-  [doc]
-  doc)
-
-(defsafe create-document!
-  "Put document into elastic"
-  [doc]
-  (let [raw-db (get-raw-db)]
-    (mc/insert raw-db "subtitle" doc))
-  (esd/create (get-dep :db-connection)
-              (env :index-name) "subtitle" (prepare-to-index doc)))
 
 (defn- get-season-episode-parts
   "Get season episode parts"
@@ -81,11 +72,6 @@
        :hits
        :hits
        (map :_source)))
-
-(defn in-db
-  "Check subtitle already in db"
-  [subtitle]
-  (mc/any? (get-raw-db) "subtitle" {:url (:url subtitle)}))
 
 (defn list-languages
   "List languages with count"

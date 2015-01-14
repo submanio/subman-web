@@ -1,7 +1,7 @@
-(ns subman.web.api
-  (:require [subman.models :as models]
-            [subman.helpers :as h]
-            [subman.const :as const]))
+(ns subman-web.api
+  (:require [subman-web.models :as models]
+            [subman-web.helpers :as h]
+            [subman-web.const :as const]))
 
 (defn- read-source
   [source]

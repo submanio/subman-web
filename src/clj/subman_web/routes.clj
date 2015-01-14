@@ -1,11 +1,10 @@
-(ns subman.web.routes
+(ns subman-web.routes
   (:require [compojure.route :as route]
             [compojure.core :refer [defroutes GET POST]]
             [ring.util.response :refer [content-type]]
-            [subman.models :as models]
-            [subman.const :as const]
-            [subman.web.api :as api]
-            [subman.web.views :as views]))
+            [subman-web.const :as const]
+            [subman-web.api :as api]
+            [subman-web.views :as views]))
 
 (defroutes main-routes
   (GET "/" [] (views/index-page))

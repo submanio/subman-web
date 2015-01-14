@@ -1,4 +1,4 @@
-(ns subman.const)
+(ns subman-web.const)
 
 (def type-all -1)
 

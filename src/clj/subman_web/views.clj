@@ -1,11 +1,11 @@
-(ns subman.web.views
+(ns subman-web.views
   (:require [clojure.string :refer [blank?]]
             [hiccup.page :refer [html5 include-css include-js xml-declaration]]
             [hiccup.core :refer [html]]
             [cemerick.url :refer [url-encode]]
             [environ.core :refer [env]]
-            [subman.helpers :refer [as-static make-static]]
-            [subman.models :refer [unique-show-season-episode]]))
+            [subman-web.helpers :refer [as-static make-static]]
+            [subman-web.models :refer [unique-show-season-episode]]))
 
 (def debug-js
   ["components/es5-shim/es5-shim.js"

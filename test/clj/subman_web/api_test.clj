@@ -1,9 +1,9 @@
-(ns subman.web.api-test
+(ns subman-web.api-test
   (:require [clojure.test :refer [deftest testing is]]
             [test-sugar.core :refer [is=]]
-            [subman.models :as models]
-            [subman.web.api :as api]
-            [subman.const :as const]))
+            [subman-web.models :as models]
+            [subman-web.api :as api]
+            [subman-web.const :as const]))
 
 (deftest test-search
   (testing "should pass correct values"
