@@ -1,4 +1,4 @@
-# [subman.io](http://subman.io/) [![Build Status](https://travis-ci.org/submanio/subman.svg)](https://travis-ci.org/submanio/subman)
+# [subman.io](http://subman.io/) [![Build Status](https://travis-ci.org/submanio/subman-web.svg)](https://travis-ci.org/submanio/subman-web)
 
 Service for fast subtitle searching.
 
