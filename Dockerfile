@@ -25,6 +25,9 @@ WORKDIR /home/subman/code
 RUN lein bower install
 RUN sass resources/public/main.sass > resources/public/main.css
 
-RUN lein ring uberjar >> /dev/null 2>> /dev/null
+
+RUN lein cljx once
+RUN lein with-profile uberjar cljsbuild once >> /dev/null 2>> /dev/null
+RUN lein ring uberjar
 
 CMD java -jar target/subman-web-*-SNAPSHOT-standalone.jar

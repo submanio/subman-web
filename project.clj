@@ -65,10 +65,10 @@
                                                                             "resources/public/components/react/react.min.js"]
                                                                   :output-to "resources/public/main.js"
                                                                   :optimizations :advanced
-                                                                  :pretty-print false}}]}
+                                                                  :pretty-print false}}]
+                                             :jar true}
                                  :aot :all
-                                 :prep-tasks [["cljx" "once"]
-                                              ["cljsbuild" "once"]]}}
+                                 :prep-tasks [["cljx" "once"]]}}
             :source-paths ["src/clj", "target/generated-clj"]
             :test-paths ["test/clj"]
             :cljx {:builds [{:source-paths ["src/cljx"]
