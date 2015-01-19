@@ -4,9 +4,7 @@
             [test-sugar.core :refer [is= is-do]]
             [subman-web.helpers :refer [with-atom]]
             [subman-web.const :as const]
-            [subman-web.models :as models]
-            [monger.collection :as mc]
-            [monger.core :as mg]))
+            [subman-web.models :as models]))
 
 (deftest test-get-total-count
   (with-redefs [esd/search (constantly {:hits {:total 10}})]
