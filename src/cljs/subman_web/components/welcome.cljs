@@ -20,9 +20,6 @@
                       ", "
                       [:a {:href "http://subscene.com/"
                            :target "_blank"} "subscene.com"]
-                      ", "
-                      [:a {:href "http://notabenoid.com/"
-                           :target "_blank"} "notabenoid.com"]
                       " and "
                       [:a {:href "http://uksubtitles.ru/"
                            :target "_blank"} "uksubtitles.ru"]
