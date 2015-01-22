@@ -16,5 +16,6 @@ hs_err*
 /resources/public/main.js
 /resources/public/main.js.map
 /resources/public/main.css
+/resources/public/main.css.map
 .idea
 *iml

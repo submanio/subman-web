@@ -47,12 +47,7 @@
                        [:i.extension-icon]
                        " Download chrome extension"]]
                      [:p
-                      [:a {:href "https://github.com/nvbn/subman"
+                      [:a {:href "https://github.com/submanio"
                            :target "_blank"}
                        [:i.github-icon]
-                       " Sources"]
-                      " "
-                      [:a {:href "https://github.com/nvbn/subman-chrome"
-                           :target "_blank"}
-                       [:i.github-icon]
-                       " Extension sources"]]])))
+                       " Sources"]]])))
