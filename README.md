@@ -2,7 +2,7 @@
 
 Service for fast subtitle searching.
 
-[Chrome extension sources.](https://github.com/nvbn/subman-chrome)
+[Chrome extension sources.](https://github.com/subman/subman-chrome)
 
 ## Api
 
